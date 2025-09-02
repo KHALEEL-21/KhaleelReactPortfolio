@@ -1,0 +1,29 @@
+.navbar {
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    li {
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        color: #f39c12;
+      }
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        li {
+          padding: 10px;
+          &:hover {
+            background: #f0f0f0;
+          }
+        }
+      }
+    }
+  }
+}

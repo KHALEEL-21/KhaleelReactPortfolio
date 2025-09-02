@@ -6,10 +6,8 @@ import ThemeToggle from './components/ThemeToggle';
 import ColorPicker from './components/ColorPicker';
 import Home from './pages/Home';
 import Footer from './components/Footer';
-import AppLogoKS from './assets/ks-logo-fnt-trans.png';
 import LanguagePicker from './components/LanguagePicker';
-// import './i18n';
-// import { LanguageProvider } from './context/LanguageContext';
+import kslogo from './assets/ks-logo.png';
 
 function App() {
   return (
@@ -18,8 +16,8 @@ function App() {
       {/* <LanguageProvider> */}
         <div className="app">
           <header className="app-header">
-            <div className='logoSpace'>
-              <img src={AppLogoKS} alt="KS Logo" className="AppLogoKS" />
+            <div style={{marginTop:"4px"}} className='logoSpace'>
+              <img style={{scale: "1.2", marginTop:"5px"}} src={kslogo} alt="KS Logo" className="AppLogoKS" />
             </div>
             <div className="theme-controls">
               <ThemeToggle />
