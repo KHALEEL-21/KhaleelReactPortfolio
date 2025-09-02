@@ -1,0 +1,98 @@
+.language-picker-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .language-icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #f0f0f0; // light hover effect
+    }
+  }
+  
+  .icon-button {
+    background-color: transparent !important;
+  }
+  
+  .language-options {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: var(--options-bg);
+    border: 1px solid var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    width: 140px;
+    z-index: 10;
+    padding: 5px 0;
+  }
+  
+  .language-option {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  
+    &:hover {
+      background-color: var(--options-bg-hover);
+    }
+  
+    &.active {
+      background-color: var(--primary-color); // highlight selected
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+  
+
+
+// .language-picker-wrapper {
+//     position: relative;
+//     display: inline-block;
+// }
+
+// .language-icon-button {
+//     background-color: transparent;
+//     border: none;
+//     cursor: pointer;
+//     padding: 8px;
+//     border-radius: 50%;
+//     transition: background-color 0.3s;
+
+//     &:hover {
+//         background-color: #f0f0f0; // light hover effect
+//     }
+// }
+
+// .icon-button {
+//     background-color: transparent !important;
+// }
+
+// .language-options {
+//     position: absolute;
+//     top: 120%;
+//     right: 0;
+//     background: var(--options-bg);
+//     border: 1px solid var(--text-color);
+//     border-radius: 8px;
+//     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+//     width: 140px;
+//     z-index: 10;
+//     padding: 5px 0;
+// }
+
+// .language-option {
+//     padding: 10px 15px;
+//     cursor: pointer;
+//     font-size: 14px;
+
+//     &:hover {
+//         background-color: var(--options-bg-hover);
+//     }
+// }

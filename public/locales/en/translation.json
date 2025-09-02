@@ -1,0 +1,8 @@
+{
+  "hero": {
+    "greeting": "Hello! 👋",
+    "introStart": "I'm",
+    "role": "React Developer & Frontend Enthusiast",
+    "description": "Passionate about building modern UI experiences with 1.5+ years in React, React Native, Node.js, SCSS, and more."
+  }
+}

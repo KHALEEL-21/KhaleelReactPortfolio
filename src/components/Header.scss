@@ -1,0 +1,45 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  
+    .left-branding {
+      .name {
+        font-size: 1.8rem;
+        margin: 0;
+        font-weight: bold;
+      }
+  
+      .role {
+        font-size: 1rem;
+        margin: 0;
+        opacity: 0.9;
+      }
+    }
+  
+    .right-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    button, input[type='color'] {
+      background: white;
+      color: black;
+      border: none;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  

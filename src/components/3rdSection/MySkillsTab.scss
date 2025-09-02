@@ -1,0 +1,168 @@
+.skills-tab {
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e); // You can also replace this later with theme variable if needed
+  color: var(--text-color); // ✅ global font color
+  font-family: 'Segoe UI', sans-serif;
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--primary-color); // ✅ global primary
+    text-shadow: 0 0 10px var(--primary-color); // ✅ themed glow
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .skills-group {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.2);
+
+    &:hover {
+      box-shadow: 0 0 30px rgba(0, 255, 200, 0.4);
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: var(--primary-color); // ✅ global primary
+    }
+
+    .skills-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        border-radius: 12px;
+        color: var(--text-color); // ✅ use global text color
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        min-width: 100px;
+
+        &:hover {
+          transform: scale(1.08);
+          background: rgba(0, 255, 200, 0.1);
+          box-shadow: 0 0 15px var(--primary-color); // ✅ themed glow
+        }
+
+        svg {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        span {
+          text-align: center;
+          font-size: 0.9rem;
+          color: var(--text-color); // ✅ consistent text
+        }
+
+        small {
+          display: block;
+          font-size: 0.7rem;
+          color: var(--muted-color, #aaa); // ✅ add a muted global variable fallback
+        }
+      }
+
+      .emoji {
+        font-size: 2.2rem;
+        span {
+          margin-top: 0.4rem;
+          font-size: 0.9rem;
+          color: var(--text-color); // ✅ consistent with theme
+        }
+      }
+    }
+
+    &.creative .skill-item {
+      border: 1px solid var(--primary-color); // ✅ themed border
+      box-shadow: 0 0 15px var(--primary-color); // ✅ themed glow
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      svg {
+        font-size: 1.8rem;
+        color: var(--secondary-color, #ffdd57); // ✅ create secondary accent variable
+        transition: 0.3s;
+
+        &:hover {
+          color: var(--text-color); // ✅ consistent hover
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.skills-tab {
+  padding: 4rem 2rem;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+
+  .section-title {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+  }
+
+  .skills-group {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      background: var(--card-hover-bg);
+    }
+
+    h3 {
+      color: var(--primary-color);
+    }
+
+    .skill-item {
+      background: var(--card-bg);
+      color: var(--text-color);
+
+      &:hover {
+        background: var(--card-hover-bg);
+        box-shadow: 0 0 15px var(--primary-color);
+      }
+
+      small {
+        color: var(--muted-color);
+      }
+    }
+
+    &.creative .skill-item {
+      border: 1px solid var(--primary-color);
+      box-shadow: 0 0 15px var(--primary-color);
+    }
+
+    .social-icons svg {
+      color: var(--secondary-color);
+
+      &:hover {
+        color: var(--text-color);
+      }
+    }
+  }
+}
