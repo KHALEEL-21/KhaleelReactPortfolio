@@ -1,5 +1,11 @@
 // src/context/ColorContext.tsx
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
 interface ColorContextType {
   primaryColor: string;
@@ -14,12 +20,12 @@ interface ColorProviderProps {
 
 export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
   const [primaryColor, setPrimaryColor] = useState<string>(() => {
-    return localStorage.getItem('primaryColor') || '#4f46e5';
+    return localStorage.getItem("primaryColor") || "#4f46e5";
   });
 
   useEffect(() => {
-    document.documentElement.style.setProperty('--primary-color', primaryColor);
-    localStorage.setItem('primaryColor', primaryColor);
+    document.documentElement.style.setProperty("--primary-color", primaryColor);
+    localStorage.setItem("primaryColor", primaryColor);
   }, [primaryColor]);
 
   return (
@@ -31,6 +37,6 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
 
 export const useColor = (): ColorContextType => {
   const context = useContext(ColorContext);
-  if (!context) throw new Error('useColor must be used within ColorProvider');
+  if (!context) throw new Error("useColor must be used within ColorProvider");
   return context;
 };

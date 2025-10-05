@@ -1,21 +1,21 @@
 :root {
-  --primary-color: #4f46e5; // Accent color (set via color picker)
+  --primary-color: #1e3a8a; // Accent color (set via color picker)
   --background-color: #ffffff; // Default light mode
   --text-color: #000000;
-  --options-bg: #e4e4e4; 
+  --options-bg: #e4e4e4;
   --options-bg-hover: #f3f3f3;
 }
 
 body.dark {
   --background-color: #121212; // Dark mode background
   --text-color: #ffffff;
-  --options-bg: #333333; 
-  --options-bg-hover: #444444; 
+  --options-bg: #333333;
+  --options-bg-hover: #444444;
 }
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -30,7 +30,7 @@ body {
   color: var(--text-color);
 }
 
-.icon-button{
+.icon-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -47,22 +47,22 @@ body {
   transform: scale(1.8);
 }
 
-
-button, input[type='color'] {
+button,
+input[type="color"] {
   border: none;
   padding: 0.5rem;
   cursor: pointer;
   border-radius: 8px;
 }
 
-.footer {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  text-align: center;
-  padding: 2rem 1rem;
-}
+// .footer {
+//   background-color: var(--background-color);
+//   color: var(--text-color);
+//   text-align: center;
+//   padding: 2rem 1rem;
+// }
 :root {
-  --primary-color: #4f46e5;
+  --primary-color: #1e3a8a;
   --text-color: #000;
   --background-color: #fff;
 }

@@ -1,5 +1,11 @@
 // src/context/ThemeContext.tsx
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
 interface ThemeContextType {
   darkMode: boolean;
@@ -14,13 +20,13 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    const saved = localStorage.getItem('darkMode');
-    return saved !== null ? saved === 'true' : true;
+    const saved = localStorage.getItem("darkMode");
+    return saved !== null ? saved === "true" : false; // Default to light mode
   });
 
   useEffect(() => {
-    document.body.className = darkMode ? 'dark' : 'light';
-    localStorage.setItem('darkMode', darkMode.toString());
+    document.body.className = darkMode ? "dark" : "light";
+    localStorage.setItem("darkMode", darkMode.toString());
   }, [darkMode]);
 
   return (
@@ -32,6 +38,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
-  if (!context) throw new Error('useTheme must be used within ThemeProvider');
+  if (!context) throw new Error("useTheme must be used within ThemeProvider");
   return context;
 };
