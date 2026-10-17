@@ -1,9 +1,13 @@
 .themeButtonStyles {
-    background: transparent;
-    font-size: 20px;
-  }
-  
-  .moon-icon {
-    transform: rotate(90deg);
-  }
+  display: grid;
+  place-items: center;
+  background: transparent;
+  color: var(--text-color);
+  font-size: 17px;
+}
+
+.moon-icon {
+  display: inline-block;
+  transform: rotate(90deg);
+}
   

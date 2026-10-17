@@ -1,47 +1,47 @@
 import './HeroSection.scss';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaArrowDown, FaDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import myProfilePhoto from '../assets/ks-2.png'; 
-import { useTranslation, Trans } from 'react-i18next';
+import resumeFile from '../assets/Khaleel_FrontendEngineer_2.pdf';
+import { useTranslation } from 'react-i18next';
 
 function HeroSection() {
   const { t } = useTranslation();
 
   return (
     <section className="hero">
-      <div className="hero-image">
-        <div className="blob-bg">
-          <img src={myProfilePhoto} alt="Khaleelullah Sheriff" className="myProfile" />
-        </div>
-      </div>
-
       <div className="hero-text">
-        <h3>{t('hello')}</h3>
-
+        <p className="hero-eyebrow"><span /> FRONTEND ENGINEER <i /> REACT SPECIALIST</p>
         <h1>
-          {/* 👇 Trans allows using <bold> and <br /> from translations */}
-          <Trans i18nKey="intro" values={{ name: "Khaleelullah Sheriff" }}
-            components={{
-              bold: <span className="highlight" />,
-              br: <br />
-            }}
-          />
+          Building
+          <span className="hero-title-accent"> better</span>
+          <span className="hero-title-end"> digital experiences.</span>
         </h1>
-
-        <p>{t('description')}</p>
+        <p className="hero-intro">
+          I’m <strong>Khaleelullah Sheriff</strong> — a frontend engineer who turns complex ideas
+          into clear, reliable, and delightful web experiences.
+        </p>
+        <p className="hero-description">{t('description')}</p>
 
         <div className="hero-buttons">
-          <a href="https://github.com/KHALEEL-21" target="_blank" className="btn-primary" rel="noopener noreferrer">
-            <FaGithub /> {t('github')}
+          <a href="#projects" className="btn-primary">
+            Explore my work <FaArrowDown />
           </a>
-          <a
-            href="https://in.linkedin.com/in/khaleelullah-sheriff-k-947b62245"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary"
-          >
-            <FaLinkedin /> {t('linkedin')}
+          <a href={resumeFile} className="btn-secondary" download="Khaleelullah-Sheriff-Resume.pdf">
+            <FaDownload /> Download resume
           </a>
         </div>
+        <div className="hero-socials">
+          <span>FIND ME ON</span>
+          <a href="https://github.com/KHALEEL-21" target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>
+          <a href="https://in.linkedin.com/in/khaleelullah-sheriff-k-947b62245" target="_blank" rel="noopener noreferrer"><FaLinkedin /> LinkedIn</a>
+        </div>
+      </div>
+      <div className="hero-image">
+        <div className="portrait-graphic" aria-hidden="true"><span>K</span></div>
+        <span className="portrait-index">INDEPENDENT THINKER. TEAM PLAYER.</span>
+        <img src={myProfilePhoto} alt="Portrait of Khaleelullah Sheriff" className="myProfile" />
+        <div className="portrait-caption"><strong>Khaleelullah Sheriff</strong><span>Frontend Engineer · Chennai, India</span></div>
+        <span className="portrait-stamp" aria-hidden="true">KS<br />2026</span>
       </div>
     </section>
   );

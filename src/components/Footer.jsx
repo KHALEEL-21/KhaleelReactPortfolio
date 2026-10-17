@@ -41,9 +41,11 @@ function Footer() {
   };
 
   return (
-    <footer className="footer">
+    <footer className="footer" id="contact">
       {/* Footer Title */}
-      <p className="footer-text">{t("footer.connect") || "Connect with me"}</p>
+      <p className="footer-kicker">HAVE A PROJECT IN MIND?</p>
+      <h2 className="footer-text">{t("footer.connect", { defaultValue: "Let’s build something great." })}</h2>
+      <p className="footer-description">I’m always glad to connect about thoughtful products and frontend work.</p>
 
       {/* Social Icons */}
       <div className="social-icons">
@@ -88,7 +90,7 @@ function Footer() {
           <FaInstagram />
         </a>
         <a
-          href="mailto:khaleelviews21@gmail.com"
+          href="mailto:kkhaleel.dev@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Email"
@@ -98,7 +100,7 @@ function Footer() {
       </div>
 
       {/* Contact Me Button */}
-      <button onClick={() => setShowForm(!showForm)} className="contact-btn">
+      <button onClick={() => setShowForm(!showForm)} className="contact-btn" aria-expanded={showForm}>
         Contact Me
       </button>
 
@@ -109,6 +111,7 @@ function Footer() {
             type="email"
             name="email"
             placeholder="Your Email"
+            aria-label="Your email address"
             value={formData.email}
             onChange={handleChange}
             required
@@ -116,6 +119,7 @@ function Footer() {
           <textarea
             name="message"
             placeholder="Your Message"
+            aria-label="Your message"
             value={formData.message}
             onChange={handleChange}
             required

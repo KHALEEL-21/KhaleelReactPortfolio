@@ -7,12 +7,15 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 8px;
-    border-radius: 50%;
-    transition: background-color 0.3s;
+      display: grid;
+      place-items: center;
+      padding: 8px;
+      border-radius: 50%;
+      color: var(--text-color);
+      transition: background-color 0.2s ease;
   
-    &:hover {
-      background-color: #f0f0f0; // light hover effect
+      &:hover {
+        background-color: var(--accent-soft);
     }
   }
   
@@ -24,10 +27,10 @@
     position: absolute;
     top: 120%;
     right: 0;
-    background: var(--options-bg);
-    border: 1px solid var(--text-color);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background: var(--surface-solid);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 14px 35px rgba(20, 22, 32, 0.14);
     width: 140px;
     z-index: 10;
     padding: 5px 0;

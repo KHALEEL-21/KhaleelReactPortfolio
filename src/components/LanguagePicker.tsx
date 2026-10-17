@@ -35,8 +35,9 @@ const LanguagePicker: React.FC = () => {
         title="Choose Language"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        aria-label="Choose language"
       >
-        <FaLanguage size={22} color='rgb(31, 30, 30)' className='icon-button' />
+        <FaLanguage size={20} className='icon-button' />
       </button>
 
       {open && (

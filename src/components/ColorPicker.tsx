@@ -19,8 +19,10 @@ const ColorPicker: React.FC = () => {
         className="palette-icon-button"
         onClick={togglePalette}
         title="Choose Theme Color"
+        aria-label="Choose theme color"
+        aria-expanded={showPalette}
       >
-        <IoColorPaletteSharp size={22} color='rgb(31, 30, 30)' />
+        <IoColorPaletteSharp size={19} />
       </button>
 
       {showPalette && (
