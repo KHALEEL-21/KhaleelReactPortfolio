@@ -26,7 +26,7 @@
   .language-options {
     position: absolute;
     top: 120%;
-    right: 0;
+    inset-inline-end: 0;
     background: var(--surface-solid);
     border: 1px solid var(--border-color);
     border-radius: 12px;
@@ -37,7 +37,14 @@
   }
   
   .language-option {
+    display: block;
+    width: 100%;
     padding: 10px 15px;
+    border: 0;
+    background: transparent;
+    color: var(--text-color);
+    text-align: start;
+    font: inherit;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.2s;

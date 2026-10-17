@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 import { useColor } from '../context/ColorContext';
 import { IoColorPaletteSharp } from "react-icons/io5";
 import { FiPlus } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 import './ColorPicker.scss';
 
 const presetColors: string[] = ['#4f46e5', '#f43f5e', '#10b981', '#f59e0b'];
 
 const ColorPicker: React.FC = () => {
   const { primaryColor, setPrimaryColor } = useColor();
+  const { t } = useTranslation();
   const [showPalette, setShowPalette] = useState<boolean>(false);
 
   const togglePalette = () => setShowPalette(!showPalette);
@@ -18,8 +20,8 @@ const ColorPicker: React.FC = () => {
       <button
         className="palette-icon-button"
         onClick={togglePalette}
-        title="Choose Theme Color"
-        aria-label="Choose theme color"
+        title={t('controls.chooseColor')}
+        aria-label={t('controls.chooseColor')}
         aria-expanded={showPalette}
       >
         <IoColorPaletteSharp size={19} />
@@ -47,7 +49,7 @@ const ColorPicker: React.FC = () => {
                 setPrimaryColor(e.target.value);
                 setShowPalette(false);
               }}
-              title="Custom color"
+              title={t('controls.customColor')}
             />
             <FiPlus color="#fff" />
           </label>

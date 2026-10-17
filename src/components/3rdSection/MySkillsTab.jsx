@@ -1,4 +1,5 @@
 import "./MySkillsTab.scss";
+import { useTranslation } from "react-i18next";
 
 const skillGroups = [
   {
@@ -97,14 +98,15 @@ const modernToolkit = [
 ];
 
 function MySkillsTab() {
+  const { t } = useTranslation();
+
   return (
     <section className="skills-tab-container" id="skills">
       <div className="section-heading">
-        <p className="section-kicker">TECHNICAL SKILLS</p>
-        <h2 className="skills-heading">Tools I use to ship products</h2>
+        <p className="section-kicker">{t("skills.kicker")}</p>
+        <h2 className="skills-heading">{t("skills.heading")}</h2>
         <p className="section-description">
-          Frontend engineering, visualisation, integrations, testing, and the practices
-          I bring to a team.
+          {t("skills.description")}
         </p>
       </div>
 
@@ -113,7 +115,7 @@ function MySkillsTab() {
           <article className="skill-card" key={group.category}>
             <div className="skill-card-heading">
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3 className="skill-category">{group.category}</h3>
+              <h3 className="skill-category">{t(`skills.groups.${index}`)}</h3>
             </div>
             <div className="skills-list">
               {group.skills.map((skill) => (
@@ -126,17 +128,14 @@ function MySkillsTab() {
 
       <aside className="modern-toolkit" aria-labelledby="modern-toolkit-heading">
         <div className="modern-toolkit-intro">
-          <p className="toolkit-kicker">CAREER REFERENCE</p>
-          <h3 id="modern-toolkit-heading">Modern JavaScript toolkit</h3>
-          <p>
-            Common technologies and practices in current React roles. This is a learning
-            reference, separate from the skills listed in my resume.
-          </p>
+          <p className="toolkit-kicker">{t("skills.toolkitKicker")}</p>
+          <h3 id="modern-toolkit-heading">{t("skills.toolkitHeading")}</h3>
+          <p>{t("skills.toolkitDescription")}</p>
         </div>
         <div className="modern-toolkit-groups">
-          {modernToolkit.map((group) => (
+          {modernToolkit.map((group, index) => (
             <div className="modern-toolkit-group" key={group.category}>
-              <h4>{group.category}</h4>
+              <h4>{t(`skills.modernGroups.${index}`)}</h4>
               <div className="modern-toolkit-tags">
                 {group.skills.map((skill) => (
                   <span key={skill}>{skill}</span>

@@ -31,21 +31,21 @@ function Footer() {
         "w6eyRqDy8yDYoAYIP" // Your EmailJS Public Key
       )
       .then(() => {
-        alert("Message sent successfully!");
+        alert(t("footer.sent"));
         setFormData({ email: "", message: "" });
         setShowForm(false);
       })
       .catch(() => {
-        alert("Failed to send message. Please try again.");
+        alert(t("footer.failed"));
       });
   };
 
   return (
     <footer className="footer" id="contact">
       {/* Footer Title */}
-      <p className="footer-kicker">HAVE A PROJECT IN MIND?</p>
-      <h2 className="footer-text">{t("footer.connect", { defaultValue: "Let’s build something great." })}</h2>
-      <p className="footer-description">I’m always glad to connect about thoughtful products and frontend work.</p>
+      <p className="footer-kicker">{t("footer.kicker")}</p>
+      <h2 className="footer-text">{t("footer.heading")}</h2>
+      <p className="footer-description">{t("footer.description")}</p>
 
       {/* Social Icons */}
       <div className="social-icons">
@@ -53,7 +53,7 @@ function Footer() {
           href="https://in.linkedin.com/in/khaleelullah-sheriff-k-947b62245"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="LinkedIn"
+          aria-label={t("social.linkedin")}
         >
           <FaLinkedin />
         </a>
@@ -61,7 +61,7 @@ function Footer() {
           href="https://github.com/KHALEEL-21"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="GitHub"
+          aria-label={t("social.github")}
         >
           <FaGithub />
         </a>
@@ -69,7 +69,7 @@ function Footer() {
           href="https://www.youtube.com/@VIBEZBROTHERS"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="YouTube"
+          aria-label={t("social.youtube")}
         >
           <FaYoutube />
         </a>
@@ -77,7 +77,7 @@ function Footer() {
           href="https://www.facebook.com/khaleelviews/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Facebook"
+          aria-label={t("social.facebook")}
         >
           <FaFacebook />
         </a>
@@ -85,7 +85,7 @@ function Footer() {
           href="https://www.instagram.com/khaleel_views/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Instagram"
+          aria-label={t("social.instagram")}
         >
           <FaInstagram />
         </a>
@@ -93,7 +93,7 @@ function Footer() {
           href="mailto:kkhaleel.dev@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Email"
+          aria-label={t("social.email")}
         >
           <FaEnvelope />
         </a>
@@ -101,7 +101,7 @@ function Footer() {
 
       {/* Contact Me Button */}
       <button onClick={() => setShowForm(!showForm)} className="contact-btn" aria-expanded={showForm}>
-        Contact Me
+        {t("footer.contact")}
       </button>
 
       {/* Contact Form */}
@@ -110,28 +110,28 @@ function Footer() {
           <input
             type="email"
             name="email"
-            placeholder="Your Email"
-            aria-label="Your email address"
+            placeholder={t("footer.email")}
+            aria-label={t("footer.email")}
             value={formData.email}
             onChange={handleChange}
             required
           />
           <textarea
             name="message"
-            placeholder="Your Message"
-            aria-label="Your message"
+            placeholder={t("footer.message")}
+            aria-label={t("footer.message")}
             value={formData.message}
             onChange={handleChange}
             required
           />
-          <button type="submit">Send Message</button>
+          <button type="submit">{t("footer.send")}</button>
         </form>
       )}
 
       {/* Footer Copyright */}
       <p className="copyright">
         &copy; {new Date().getFullYear()} Khaleelullah Sheriff.{" "}
-        {t("footer.rights") || "All rights reserved."}
+        {t("footer.rights")}
       </p>
     </footer>
   );

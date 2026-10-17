@@ -1,7 +1,7 @@
 // src/components/LanguagePicker.tsx
 import React, { useState } from 'react';
 import { FaLanguage } from "react-icons/fa6";
-import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
 import './LanguagePicker.scss';
 
 interface Language {
@@ -11,19 +11,19 @@ interface Language {
 
 const languages: Language[] = [
   { code: 'en', label: 'English' },
+  { code: 'hi', label: 'हिन्दी' },
   { code: 'ta', label: 'தமிழ்' },
-  { code: 'te', label: 'తెలుగు' },
-  { code: 'ml', label: 'മലയാളം' },
-  { code: 'es', label: 'Español' },
+  { code: 'ur', label: 'اردو' },
   { code: 'ar', label: 'العربية' },
+  { code: 'ml', label: 'മലയാളം' },
+  { code: 'te', label: 'తెలుగు' },
 ];
 
 const LanguagePicker: React.FC = () => {
+  const { i18n, t } = useTranslation();
   const [open, setOpen] = useState<boolean>(false);
-  const [selectedLanguage, setSelectedLanguage] = useState<string>('English');
 
   const handleLanguageSelect = (lang: Language) => {
-    setSelectedLanguage(lang.label);
     i18n.changeLanguage(lang.code);
     setOpen(false);
   };
@@ -32,10 +32,10 @@ const LanguagePicker: React.FC = () => {
     <div className='language-picker-wrapper'>
       <button
         className="language-icon-button"
-        title="Choose Language"
+        title={t('language.choose')}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        aria-label="Choose language"
+        aria-label={t('language.choose')}
       >
         <FaLanguage size={20} className='icon-button' />
       </button>
@@ -43,13 +43,15 @@ const LanguagePicker: React.FC = () => {
       {open && (
         <div className="language-options">
           {languages.map((lang) => (
-            <div
+            <button
               key={lang.code}
-              className={`language-option ${selectedLanguage === lang.label ? 'active' : ''}`}
+              type="button"
+              className={`language-option ${i18n.resolvedLanguage === lang.code ? 'active' : ''}`}
               onClick={() => handleLanguageSelect(lang)}
+              aria-pressed={i18n.resolvedLanguage === lang.code}
             >
               {lang.label}
-            </div>
+            </button>
           ))}
         </div>
       )}

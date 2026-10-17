@@ -1,8 +1,10 @@
 // Navbar.jsx
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import './Navbar.scss';
 
 function Navbar({ projects, skills }) {
+  const { t } = useTranslation();
   const [dropdown, setDropdown] = useState(null);
 
   const scrollTo = (id) => {
@@ -17,7 +19,7 @@ function Navbar({ projects, skills }) {
           onMouseEnter={() => setDropdown("projects")}
           onMouseLeave={() => setDropdown(null)}
         >
-          Projects
+          {t("nav.projects")}
           {dropdown === "projects" && (
             <ul className="dropdown">
               {projects.map((p, i) => (
@@ -33,7 +35,7 @@ function Navbar({ projects, skills }) {
           onMouseEnter={() => setDropdown("skills")}
           onMouseLeave={() => setDropdown(null)}
         >
-          Skills
+          {t("nav.skills")}
           {dropdown === "skills" && (
             <ul className="dropdown">
               {skills.map((s, i) => (
@@ -45,18 +47,18 @@ function Navbar({ projects, skills }) {
           )}
         </li>
 
-        <li onClick={() => scrollTo("contact")}>Contact</li>
+        <li onClick={() => scrollTo("contact")}>{t("footer.contact")}</li>
 
         <li
           onMouseEnter={() => setDropdown("social")}
           onMouseLeave={() => setDropdown(null)}
         >
-          Social Media
+          {t("social.find")}
           {dropdown === "social" && (
             <ul className="dropdown">
-              <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-              <li><a href="https://github.com" target="_blank">GitHub</a></li>
-              <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+              <li><a href="https://linkedin.com" target="_blank">{t("social.linkedin")}</a></li>
+              <li><a href="https://github.com" target="_blank">{t("social.github")}</a></li>
+              <li><a href="https://instagram.com" target="_blank">{t("social.instagram")}</a></li>
             </ul>
           )}
         </li>

@@ -10,37 +10,34 @@ function HeroSection() {
   return (
     <section className="hero">
       <div className="hero-text">
-        <p className="hero-eyebrow"><span /> FRONTEND ENGINEER <i /> REACT SPECIALIST</p>
+        <p className="hero-eyebrow"><span /> {t('hero.eyebrow')} <i /> {t('hero.specialty')}</p>
         <h1>
-          Building
-          <span className="hero-title-accent"> better</span>
-          <span className="hero-title-end"> digital experiences.</span>
+          {t('hero.title')}
+          <span className="hero-title-accent">{t('hero.accent')}</span>
+          <span className="hero-title-end">{t('hero.ending')}</span>
         </h1>
-        <p className="hero-intro">
-          I’m <strong>Khaleelullah Sheriff</strong> — a frontend engineer who turns complex ideas
-          into clear, reliable, and delightful web experiences.
-        </p>
-        <p className="hero-description">{t('description')}</p>
+        <p className="hero-intro">{t('hero.intro')}</p>
+        <p className="hero-description">{t('hero.description')}</p>
 
         <div className="hero-buttons">
           <a href="#projects" className="btn-primary">
-            Explore my work <FaArrowDown />
+            {t('hero.explore')} <FaArrowDown />
           </a>
           <a href={resumeFile} className="btn-secondary" download="Khaleelullah-Sheriff-Resume.pdf">
-            <FaDownload /> Download resume
+            <FaDownload /> {t('hero.download')}
           </a>
         </div>
         <div className="hero-socials">
-          <span>FIND ME ON</span>
-          <a href="https://github.com/KHALEEL-21" target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>
-          <a href="https://in.linkedin.com/in/khaleelullah-sheriff-k-947b62245" target="_blank" rel="noopener noreferrer"><FaLinkedin /> LinkedIn</a>
+          <span>{t('hero.findMe')}</span>
+          <a href="https://github.com/KHALEEL-21" target="_blank" rel="noopener noreferrer"><FaGithub /> {t('social.github')}</a>
+          <a href="https://in.linkedin.com/in/khaleelullah-sheriff-k-947b62245" target="_blank" rel="noopener noreferrer"><FaLinkedin /> {t('social.linkedin')}</a>
         </div>
       </div>
       <div className="hero-image">
         <div className="portrait-graphic" aria-hidden="true"><span>K</span></div>
-        <span className="portrait-index">INDEPENDENT THINKER. TEAM PLAYER.</span>
-        <img src={myProfilePhoto} alt="Portrait of Khaleelullah Sheriff" className="myProfile" />
-        <div className="portrait-caption"><strong>Khaleelullah Sheriff</strong><span>Frontend Engineer · Chennai, India</span></div>
+        <span className="portrait-index">{t('hero.portraitIndex')}</span>
+        <img src={myProfilePhoto} alt={t('hero.photoAlt')} className="myProfile" />
+        <div className="portrait-caption"><strong>Khaleelullah Sheriff</strong><span>{t('hero.location')}</span></div>
         <span className="portrait-stamp" aria-hidden="true">KS<br />2026</span>
       </div>
     </section>
